@@ -1,0 +1,131 @@
+@import "test/_easing";
+
+.scrollblock {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  &:nth-of-type(2n) {
+    background: #f0f0f0;
+  }
+  h2 {
+    text-align: center;
+    flex-basis: 100%;
+    margin-bottom: 1em;
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
+
+$gap-4: 36px;
+
+.flex-4 {
+  width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: $gap-4;
+  &__single {
+    flex-basis: calc(100% / 4 - #{$gap-4} * 3 / 4);
+    .img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      background: #999;
+      margin-bottom: 16px;
+    }
+    .text {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
+$deleyNum: 4;
+
+@mixin fade {
+  opacity: 0;
+  transition: $easeOutSine 0.6s opacity, $easeOutSine 0.6s transform;
+  transition-delay: 0.4s;
+  &.active {
+    transform: translate(0);
+    opacity: 1;
+  }
+  @for $i from 1 through $deleyNum {
+    &.delay:nth-child(#{$i}) {
+      transition-delay: calc(0.4s + 0.2s * (#{$i} - 1));
+    }
+  }
+}
+
+@mixin rotate {
+  opacity: 0;
+  transition: $easeOutSine 0.6s opacity, $easeOutSine 0.6s transform;
+  transition-delay: 0.4s;
+  &.active {
+    transform: rotate(0);
+    opacity: 1;
+  }
+  @for $i from 1 through $deleyNum {
+    &.delay:nth-child(#{$i}) {
+      transition-delay: calc(0.4s + 0.2s * (#{$i} - 1));
+    }
+  }
+}
+
+$move: 20%;
+$rotate: 90deg;
+
+.f-b {
+  transform: translateY(#{$move});
+  @include fade;
+}
+
+.f-t {
+  transform: translateY(-#{$move});
+  @include fade;
+}
+
+.f-l {
+  transform: translateX(-#{$move});
+  @include fade;
+}
+
+.f-r {
+  transform: translateX(#{$move});
+  @include fade;
+}
+
+.f-o {
+  @include fade;
+}
+
+.r-a {
+  transform: rotate($rotate);
+  @include rotate;
+}
+
+.r-w {
+  transform: rotateX($rotate);
+  @include rotate;
+}
+
+.r-h {
+  transform: rotateY($rotate);
+  @include rotate;
+}
+
+footer {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}

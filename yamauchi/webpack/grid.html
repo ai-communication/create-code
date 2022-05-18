@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>開発環境</title>
+    <link rel="stylesheet" href="./assets/css/ress.min.css" />
+    <link rel="stylesheet" href="./assets/css/grid.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="global">
+        <ul>
+          <li><a href="" data-num="1">ブロック1</a></li>
+          <li><a href="" data-num="2">ブロック2</a></li>
+          <li><a href="" data-num="3">ブロック3</a></li>
+          <li><a href="" data-num="4">ブロック4</a></li>
+          <li><a href="" data-num="5">ブロック5</a></li>
+          <li><a href="" data-num="6">ブロック6</a></li>
+          <li><a href="" data-num="7">ブロック7</a></li>
+          <li><a href="" data-num="8">ブロック8</a></li>
+          <li><a href="" data-num="9">ブロック9</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="noscroll">
+      <main class="global-wrap" id="main">
+        <div class="grid-wrap" data-now="1" id="Gridwrap">
+          <section
+            class="grid-single single1"
+            id="grid-single1"
+            data-layer="1"
+          ></section>
+          <section
+            class="grid-single single2"
+            id="grid-single2"
+            data-layer="2"
+          ></section>
+          <section
+            class="grid-single single3"
+            id="grid-single3"
+            data-layer="3"
+          ></section>
+          <section
+            class="grid-single single4"
+            id="grid-single4"
+            data-layer="4"
+          ></section>
+          <section
+            class="grid-single single5"
+            id="grid-single5"
+            data-layer="5"
+          ></section>
+          <section
+            class="grid-single single6"
+            id="grid-single6"
+            data-layer="6"
+          ></section>
+          <section
+            class="grid-single single7"
+            id="grid-single7"
+            data-layer="7"
+          ></section>
+          <section
+            class="grid-single single8"
+            id="grid-single8"
+            data-layer="8"
+          ></section>
+          <section
+            class="grid-single single9"
+            id="grid-single9"
+            data-layer="9"
+          ></section>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <div class="logo">GRID-TEST</div>
+    </footer>
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(".global a").on("click", function () {
+        const num = $(this).attr("data-num");
+        document.getElementById("Gridwrap").dataset.now = num;
+        const target = ".single" + num;
+        const osX = $(target).position().left;
+        const osY = $(target).position().top;
+        $(".grid-wrap").css("top", "-" + osY + "px");
+        $(".grid-wrap").css("left", "-" + osX + "px");
+        return false;
+      });
+
+      function move(next) {
+        let element = document.getElementById("Gridwrap");
+        let name = "grid-single" + next;
+        let target = document.getElementById(name);
+        let gleft = target.offsetLeft;
+        let gtop = target.offsetTop;
+        element.style.left = "-" + gleft + "px";
+        element.style.top = "-" + gtop + "px";
+      }
+
+      document.getElementById("Gridwrap").onmousewheel = function () {
+        const maxnow = document.querySelector("#Gridwrap").childElementCount; //要素の最大数をset
+        let element = document.getElementById("Gridwrap"); //動かすdivの指定
+        if (event.wheelDelta > 0) {
+          console.log("↑");
+          let element = document.getElementById("Gridwrap");
+          let now = Number(element.dataset.now);
+          if (now > 1) {
+            now = now - 1;
+          }
+          element.dataset.now = now;
+          move(now);
+        } else {
+          console.log("↓");
+          let now = Number(element.dataset.now);
+          if (now < maxnow) {
+            now = now + 1;
+          }
+          element.dataset.now = now;
+          move(now);
+        }
+      };
+    </script>
+  </body>
+</html>

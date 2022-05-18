@@ -1,0 +1,9 @@
+div {
+  color: black;
+  .test {
+    display: flex;
+    color: blue;
+  }
+}
+
+@import "test/*";

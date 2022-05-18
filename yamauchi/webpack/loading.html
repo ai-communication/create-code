@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>開発環境：ローディング</title>
+    <link rel="stylesheet" href="./assets/css/ress.min.css" />
+    <link rel="stylesheet" href="./assets/css/loading.css" />
+  </head>
+  <body>
+    <section class="loading-wrap" id="loadwrap">
+      <h2 class="loading-title" id="loadtext">LoadingWrap</h2>
+      <div class="loading-border" id="loadborder"></div>
+    </section>
+
+    <section class="test-heavy">
+      <img src="./assets/images/heavy.jpg" alt="" />
+      <img src="./assets/images/wood.jpg" alt="" />
+      <img src="./assets/images/leef.jpg" alt="" />
+    </section>
+
+    <footer>
+      <div class="logo">LOADING-TEST</div>
+    </footer>
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+      //変数宣言
+      const getText = document.getElementById("loadtext");
+      const Body = document.body;
+
+      //実際の処理順
+      firstset();
+
+      window.onload = window.setTimeout(() => {
+        loadinganim();
+      }, 500);
+
+      //関数
+
+      function firstset() {
+        let spanText = getText.innerHTML;
+        let newText = "";
+        spanText.split("").forEach(function (value) {
+          newText += "<span>" + value + "</span>";
+        });
+        getText.innerHTML = newText;
+        Body.style.height = "100vh";
+        Body.style.overflow = "hidden";
+      }
+
+      function bodyscroll() {
+        Body.style.height = "auto";
+        Body.style.overflow = "auto";
+      }
+
+      function loadinganim() {
+        const loadingwrap = document.getElementById("loadwrap");
+        loadingwrap.classList.add("active");
+        window.setTimeout(() => {
+          loadingwrap.style.display = "none";
+          bodyscroll();
+        }, 5500);
+      }
+    </script>
+  </body>
+</html>
