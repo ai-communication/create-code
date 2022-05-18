@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  height: 8vh;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  nav {
+    width: 960px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    ul {
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      list-style-type: none;
+    }
+    li {
+      font-size: 16px;
+    }
+  }
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+main {
+  height: 75vh;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  .grid-wrap {
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    top: 0;
+    left: 0;
+    transition: ease-in-out 0.5s top, ease-in-out 0.5s left;
+  }
+  .grid-single {
+    padding: 8vh 8vw;
+    $colors: red, blue, yellow, pink, green, purple, skyblue, #968489, #123435;
+    $i: 1;
+    @each $color in $colors {
+      &.single#{$i} {
+        background: $color;
+        $i: $i + 1;
+      }
+    }
+    &.single1 {
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }
+    &.single2 {
+      grid-row: 1/2;
+      grid-column: 2/3;
+    }
+    &.single3 {
+      grid-row: 1/2;
+      grid-column: 3/4;
+    }
+    &.single4 {
+      grid-row: 2/3;
+      grid-column: 3/4;
+    }
+    &.single5 {
+      grid-row: 2/3;
+      grid-column: 2/3;
+    }
+    &.single6 {
+      grid-row: 2/3;
+      grid-column: 1/2;
+    }
+    &.single7 {
+      grid-row: 3/4;
+      grid-column: 1/2;
+    }
+    &.single8 {
+      grid-row: 3/4;
+      grid-column: 2/3;
+    }
+    &.single9 {
+      grid-row: 3/4;
+      grid-column: 3/4;
+    }
+  }
+}
+
+footer {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}

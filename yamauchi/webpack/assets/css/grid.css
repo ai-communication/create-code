@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  height: 8vh;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+header nav {
+  width: 960px;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  gap: 24px;
+  list-style-type: none;
+}
+header nav li {
+  font-size: 16px;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  width: 80%;
+  height: 75vh;
+  margin-right: auto;
+  margin-left: auto;
+}
+main .grid-wrap {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  width: 300%;
+  height: 300%;
+  transition: ease-in-out 0.5s top, ease-in-out 0.5s left;
+}
+main .grid-single {
+  padding: 8vh 8vw;
+}
+main .grid-single.single1 {
+  background: red;
+}
+main .grid-single.single2 {
+  background: blue;
+}
+main .grid-single.single3 {
+  background: yellow;
+}
+main .grid-single.single4 {
+  background: pink;
+}
+main .grid-single.single5 {
+  background: green;
+}
+main .grid-single.single6 {
+  background: purple;
+}
+main .grid-single.single7 {
+  background: skyblue;
+}
+main .grid-single.single8 {
+  background: #968489;
+}
+main .grid-single.single9 {
+  background: #123435;
+}
+main .grid-single.single1 {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+main .grid-single.single2 {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+main .grid-single.single3 {
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+main .grid-single.single4 {
+  grid-row: 2/3;
+  grid-column: 3/4;
+}
+main .grid-single.single5 {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+main .grid-single.single6 {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+main .grid-single.single7 {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+main .grid-single.single8 {
+  grid-row: 3/4;
+  grid-column: 2/3;
+}
+main .grid-single.single9 {
+  grid-row: 3/4;
+  grid-column: 3/4;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6vh;
+  background: #ccc;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+}
