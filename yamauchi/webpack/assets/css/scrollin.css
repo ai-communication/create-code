@@ -1,0 +1,251 @@
+.scrollblock {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.scrollblock:nth-of-type(2n) {
+  background: #f0f0f0;
+}
+.scrollblock h2 {
+  flex-basis: 100%;
+  margin-bottom: 1em;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
+
+.flex-4 {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 36px;
+}
+.flex-4__single {
+  flex-basis: calc(100% / 4 - 36px * 3 / 4);
+}
+.flex-4__single .img {
+  aspect-ratio: 1/1;
+  width: 100%;
+  margin-bottom: 16px;
+  background: #999;
+}
+.flex-4__single .text {
+  font-size: 14px;
+  text-align: center;
+}
+
+.f-b {
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  opacity: 0;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s opacity, cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s transform;
+  transition-delay: 0.4s;
+}
+.f-b.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  opacity: 1;
+}
+.f-b.delay:nth-child(1) {
+  transition-delay: calc(0.4s + 0.2s * (1 - 1));
+}
+.f-b.delay:nth-child(2) {
+  transition-delay: calc(0.4s + 0.2s * (2 - 1));
+}
+.f-b.delay:nth-child(3) {
+  transition-delay: calc(0.4s + 0.2s * (3 - 1));
+}
+.f-b.delay:nth-child(4) {
+  transition-delay: calc(0.4s + 0.2s * (4 - 1));
+}
+
+.f-t {
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
+  opacity: 0;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s opacity, cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s transform;
+  transition-delay: 0.4s;
+}
+.f-t.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  opacity: 1;
+}
+.f-t.delay:nth-child(1) {
+  transition-delay: calc(0.4s + 0.2s * (1 - 1));
+}
+.f-t.delay:nth-child(2) {
+  transition-delay: calc(0.4s + 0.2s * (2 - 1));
+}
+.f-t.delay:nth-child(3) {
+  transition-delay: calc(0.4s + 0.2s * (3 - 1));
+}
+.f-t.delay:nth-child(4) {
+  transition-delay: calc(0.4s + 0.2s * (4 - 1));
+}
+
+.f-l {
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+  opacity: 0;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s opacity, cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s transform;
+  transition-delay: 0.4s;
+}
+.f-l.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  opacity: 1;
+}
+.f-l.delay:nth-child(1) {
+  transition-delay: calc(0.4s + 0.2s * (1 - 1));
+}
+.f-l.delay:nth-child(2) {
+  transition-delay: calc(0.4s + 0.2s * (2 - 1));
+}
+.f-l.delay:nth-child(3) {
+  transition-delay: calc(0.4s + 0.2s * (3 - 1));
+}
+.f-l.delay:nth-child(4) {
+  transition-delay: calc(0.4s + 0.2s * (4 - 1));
+}
+
+.f-r {
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+  opacity: 0;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s opacity, cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s transform;
+  transition-delay: 0.4s;
+}
+.f-r.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  opacity: 1;
+}
+.f-r.delay:nth-child(1) {
+  transition-delay: calc(0.4s + 0.2s * (1 - 1));
+}
+.f-r.delay:nth-child(2) {
+  transition-delay: calc(0.4s + 0.2s * (2 - 1));
+}
+.f-r.delay:nth-child(3) {
+  transition-delay: calc(0.4s + 0.2s * (3 - 1));
+}
+.f-r.delay:nth-child(4) {
+  transition-delay: calc(0.4s + 0.2s * (4 - 1));
+}
+
+.f-o {
+  opacity: 0;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s opacity, cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s transform;
+  transition-delay: 0.4s;
+}
+.f-o.active {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  opacity: 1;
+}
+.f-o.delay:nth-child(1) {
+  transition-delay: calc(0.4s + 0.2s * (1 - 1));
+}
+.f-o.delay:nth-child(2) {
+  transition-delay: calc(0.4s + 0.2s * (2 - 1));
+}
+.f-o.delay:nth-child(3) {
+  transition-delay: calc(0.4s + 0.2s * (3 - 1));
+}
+.f-o.delay:nth-child(4) {
+  transition-delay: calc(0.4s + 0.2s * (4 - 1));
+}
+
+.r-a {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  opacity: 0;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s opacity, cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s transform;
+  transition-delay: 0.4s;
+}
+.r-a.active {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  opacity: 1;
+}
+.r-a.delay:nth-child(1) {
+  transition-delay: calc(0.4s + 0.2s * (1 - 1));
+}
+.r-a.delay:nth-child(2) {
+  transition-delay: calc(0.4s + 0.2s * (2 - 1));
+}
+.r-a.delay:nth-child(3) {
+  transition-delay: calc(0.4s + 0.2s * (3 - 1));
+}
+.r-a.delay:nth-child(4) {
+  transition-delay: calc(0.4s + 0.2s * (4 - 1));
+}
+
+.r-w {
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  opacity: 0;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s opacity, cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s transform;
+  transition-delay: 0.4s;
+}
+.r-w.active {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  opacity: 1;
+}
+.r-w.delay:nth-child(1) {
+  transition-delay: calc(0.4s + 0.2s * (1 - 1));
+}
+.r-w.delay:nth-child(2) {
+  transition-delay: calc(0.4s + 0.2s * (2 - 1));
+}
+.r-w.delay:nth-child(3) {
+  transition-delay: calc(0.4s + 0.2s * (3 - 1));
+}
+.r-w.delay:nth-child(4) {
+  transition-delay: calc(0.4s + 0.2s * (4 - 1));
+}
+
+.r-h {
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  opacity: 0;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s opacity, cubic-bezier(0.39, 0.575, 0.565, 1) 0.6s transform;
+  transition-delay: 0.4s;
+}
+.r-h.active {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  opacity: 1;
+}
+.r-h.delay:nth-child(1) {
+  transition-delay: calc(0.4s + 0.2s * (1 - 1));
+}
+.r-h.delay:nth-child(2) {
+  transition-delay: calc(0.4s + 0.2s * (2 - 1));
+}
+.r-h.delay:nth-child(3) {
+  transition-delay: calc(0.4s + 0.2s * (3 - 1));
+}
+.r-h.delay:nth-child(4) {
+  transition-delay: calc(0.4s + 0.2s * (4 - 1));
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6vh;
+  background: #ccc;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+}
