@@ -17,19 +17,10 @@ var webp = require('gulp-webp');
 var FtpDeploy = require('ftp-deploy');
 var ftpDeploy = new FtpDeploy();
 
-gulp.task('svgmin', function (done) {
-  gulp
-    .src('src/**/*.+(svg)')
-    .pipe(isChanged('dist'))
-    .pipe(svgmin())
-    .pipe(gulp.dest('dist'));
-  done();
-});
-
 // Sass compile task
 gulp.task('scss', function (done) {
   return gulp
-    .src('./assets/css/**/*.scss') // コンパイル対象 scss
+    .src('./src/scss/**/*.scss') // コンパイル対象 scss
     .pipe(sassGlob())
     .pipe(
       sass({
@@ -79,18 +70,14 @@ gulp.task('mincss', function (done) {
 gulp.task('webp', function (done) {
   return gulp
     .src('src/**/*.+(jpg|jpeg|png)')
-    .pipe(isChanged('dist'))
+    .pipe(isChanged('assets/images'))
     .pipe(webp())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('assets/images'));
   done();
 });
 
 gulp.task('default', function (done) {
   // scss watch & ftp deploy
-  gulp.watch(
-    './assets/css/**/*.scss',
-    gulp.series('scss', 'mincss' /*, 'ftp'*/)
-  );
-  //gulp.watch(['src/**/*.*'], gulp.series('webp', 'svgmin')); //src部分は適宜環境に合わせて修正
+  gulp.watch('./src/scss/**/*.scss', gulp.series('scss', 'mincss' /*, 'ftp'*/));
   done();
 });

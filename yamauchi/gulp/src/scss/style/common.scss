@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @use 'sass:math';
 
+//レスポンシブ
+@import './res';
+
 //テンプレートパーツ
 @import '../template/**';
 
