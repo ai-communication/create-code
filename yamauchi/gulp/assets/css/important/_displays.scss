@@ -1,0 +1,23 @@
+@include mq(xl) {
+  .xl-none {
+    display: none;
+  }
+}
+
+@include mq(l) {
+  .l-none {
+    display: none;
+  }
+}
+
+@include mq(m) {
+  .m-none {
+    display: none;
+  }
+}
+
+@include mq(s) {
+  .s-none {
+    display: none;
+  }
+}

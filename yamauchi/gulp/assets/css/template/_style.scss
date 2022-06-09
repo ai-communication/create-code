@@ -1,0 +1,141 @@
+//font-size
+
+@for $i from 10 through 60 {
+  .fs#{$i} {
+    font-size: $i + px;
+  }
+  $i: $i + 1;
+}
+
+@for $i from 10 through 60 {
+  .fs_sp#{$i} {
+    @include mq(s) {
+      font-size: $i + px;
+    }
+  }
+  $i: $i + 1;
+}
+
+//font-family
+
+.fs-os {
+  font-family: 'Open Sans', sans-serif;
+}
+
+//italic
+
+.italic {
+  font-style: italic;
+}
+
+//margin/padding
+
+@for $i from 1 through 20 {
+  $eight: $i * 8;
+  .mt#{$eight} {
+    margin-top: $eight + px;
+  }
+  .mb#{$eight} {
+    margin-bottom: $eight + px;
+  }
+  .mr#{$eight} {
+    margin-right: $eight + px;
+  }
+  .ml#{$eight} {
+    margin-left: $eight + px;
+  }
+  .pt#{$eight} {
+    padding-top: $eight + px;
+  }
+  .pb#{$eight} {
+    padding-bottom: $eight + px;
+  }
+  .pr#{$eight} {
+    padding-right: $eight + px;
+  }
+  .pl#{$eight} {
+    padding-left: $eight + px;
+  }
+  .mt_sp#{$eight} {
+    @include mq(s) {
+      margin-top: $eight + px;
+    }
+  }
+  .mb_sp#{$eight} {
+    @include mq(s) {
+      margin-bottom: $eight + px;
+    }
+  }
+  .mr_sp#{$eight} {
+    @include mq(s) {
+      margin-right: $eight + px;
+    }
+  }
+  .ml_sp#{$eight} {
+    @include mq(s) {
+      margin-left: $eight + px;
+    }
+  }
+  .pt_sp#{$eight} {
+    @include mq(s) {
+      padding-top: $eight + px;
+    }
+  }
+  .pb_sp#{$eight} {
+    @include mq(s) {
+      padding-bottom: $eight + px;
+    }
+  }
+  .pr_sp#{$eight} {
+    @include mq(s) {
+      padding-right: $eight + px;
+    }
+  }
+  .pl_sp#{$eight} {
+    @include mq(s) {
+      padding-left: $eight + px;
+    }
+  }
+  $i: $i + 1;
+}
+
+//align
+
+.t-left {
+  text-align: left;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-left_sp {
+  @include mq(s) {
+    text-align: justify;
+  }
+}
+
+.t-center_sp {
+  @include mq(s) {
+    text-align: center;
+  }
+}
+
+.t-right_sp {
+  @include mq(s) {
+    text-align: right;
+  }
+}
+
+//font-weight
+
+@for $i from 300 through 900 {
+  .fw#{$i} {
+    font-weight: $i;
+  }
+  $i: $i + 100;
+}
