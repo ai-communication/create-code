@@ -1,0 +1,98 @@
+$breakpoint: (
+  s: 'screen and (max-width:640px)',
+  m: 'screen and (max-width:919px)',
+  l: 'screen and (max-width:1439px)',
+  xl: 'screen and (min-width:1440px)',
+  rs: 'screen and (min-width:641px)',
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint,$bp)} {
+    @content;
+  }
+}
+
+//width
+
+@mixin width($pc) {
+  width: 100%;
+  max-width: calc(#{$pc} + 40px);
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include mq(s) {
+    padding: 0 20px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin width2($pc) {
+  width: 100%;
+  max-width: calc(#{$pc} + 40px);
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include mq(s) {
+    padding: 0;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+//display:flex;
+
+@mixin flex($justify: space-between, $align: stretch) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+//font-size
+@mixin fs($pc: 1.6rem, $tab: 1.6rem, $sp: 1.4rem) {
+  font-size: $pc;
+
+  @include tab-small {
+    font-size: $tab;
+  }
+
+  @include mq(s) {
+    font-size: $sp;
+  }
+}
+
+@mixin lh($pc: 1.8, $sp: 1.6) {
+  line-height: $pc;
+
+  @include mq(s) {
+    line-height: $sp;
+  }
+}
+
+//slick
+
+@mixin slicks {
+  font-size: 10px;
+}
+
+//margin
+
+@mixin scbar($color: rgba(0, 0, 50, 0.5)) {
+  @media only screen and (min-width: 768px) {
+    /*スクロールバー全体*/
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    /*スクロールバーの動く部分*/
+    &::-webkit-scrollbar-thumb {
+      background-color: $color;
+      border-radius: 10px;
+      opacity: 0.3;
+    }
+  }
+}

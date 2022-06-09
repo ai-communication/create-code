@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@use 'sass:math';
+
+//テンプレートパーツ
+@import '../template/**';
+
+//自分のリセットファイル
+@import '../reset/**';
+
+//各ページと共通のscss
+@import '../pages/**';
+
+//レスポンシブでの表示非表示
+@import '../important/**';
