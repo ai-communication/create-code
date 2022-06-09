@@ -76,7 +76,7 @@ gulp.task('webp', function (done) {
   done();
 });
 
-gulp.task('default', function (done) {
+gulp.task('scss', function (done) {
   // scss watch & ftp deploy
   gulp.watch('./src/scss/**/*.scss', gulp.series('scss', 'mincss' /*, 'ftp'*/));
   done();
