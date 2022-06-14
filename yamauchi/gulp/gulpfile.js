@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var isChanged = require('gulp-changed');
-var svgmin = require('gulp-svgmin');
 var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
 var autoprefixer = require('gulp-autoprefixer');
 var gcmq = require('gulp-group-css-media-queries');
 var csscomb = require('gulp-csscomb'); //cssプロパティ順序
