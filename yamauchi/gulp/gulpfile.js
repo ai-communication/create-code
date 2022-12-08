@@ -68,9 +68,9 @@ gulp.task('mincss', function (done) {
 gulp.task('webp', function (done) {
   return gulp
     .src('src/**/*.+(jpg|jpeg|png)')
-    .pipe(isChanged('assets/images'))
+    .pipe(isChanged('assets'))
     .pipe(webp())
-    .pipe(gulp.dest('assets/images'));
+    .pipe(gulp.dest('assets'));
   done();
 });
 
